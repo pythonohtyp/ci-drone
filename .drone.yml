@@ -18,13 +18,29 @@ pipeline:
      - go
   dingtalk:
     image: xtony77/drone-dingtalk
-    webhook: https://oapi.dingtalk.com/robot/send?access_token=d93f58ca06051be5c0b6a6211ebd1d8ef10fa6fa5e03b46beba102ae0cee9ac4
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=XXXXXXXXXXXXXXXX
     when:
       status: [failure, success]
+  dingtalk_secret:
+    image: xtony77/drone-dingtalk
+    secrets:
+      - source: dingding
+        target: plugin_webhook
+    when:
+      status: [ failure, success ]
   notification:
     image: guoxudongdocker/drone-dingtalk
-    token: d93f58ca06051be5c0b6a6211ebd1d8ef10fa6fa5e03b46beba102ae0cee9ac4
+    token: XXXXXXXXXXXXXX10fa6fa5e03b46beba102ae0cee9ac4
     type: markdown
     message_color: true
     message_pic: true
     sha_link: true
+  #notification_secret:网上教程，测试不可用
+  #  image: guoxudongdocker/drone-dingtalk
+  #  settings:
+  #    token:
+  #      from_secret: dingtalk
+  #    type: markdown
+  #    message_color: true
+  #    message_pic: true
+  #    sha_link: true
