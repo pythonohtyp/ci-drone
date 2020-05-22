@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+        drone-server:
+                image: drone/drone:alpine
+                container_name: droness
+                restart: always
+                ports:
+                  - 8888:8000
+                volumes:
+                        - /srv/drone:/var/lib/drone
+                environment:
+                        - DRONE_ADMIN=admin
+                        - DRONE_DEBUG=true
+                        - DRONE_OPEN=true
+                        - DRONE_HOST=http://drone.example.com
+                        - DRONE_GITLAB=true
+                        - DRONE_GITLAB_URL=http://192.168.110.12
+                        - DRONE_GITLAB_CLIENT=c26d04f860d3186aa5457f8d8ae2a81e5e56289099c8c38f48164d6faa50aac4
+                        - DRONE_GITLAB_SECRET=687e56b124542939f4d7283b843bc8c1df599746d99a36ae107797f88426d9cd
+                        - DRONE_SECRET="my-drone"
+                        - DRONE_DATABASE_DRIVER=mysql
+                        - DRONE_DATABASE_DATASOURCE=root:DtDream01@tcp(192.168.110.11:3306)/drone?parseTime=true
+
+        drone-agent:
+                image: drone/agent:alpine
+                container_name: droneaa
+                restart: always
+                depends_on:
+                        - drone-server
+                volumes:
+                        - /var/run/docker.sock:/var/run/docker.sock
+                environment:
+                        - DRONE_DEBUG=true
+                        - DRONE_SERVER=drone-server:9000
+                        - DRONE_SECRET="my-drone"
