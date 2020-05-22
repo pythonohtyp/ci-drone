@@ -17,7 +17,7 @@ pipeline:
     source:
      - go
   dingtalk:
-    image: guoxudongdocker/drone-dingtalk
+    image: lddsb/drone-dingtalk-message
     settings:
       token: d93f58ca06051be5c0b6a6211ebd1d8ef10fa6fa5e03b46beba102ae0cee9ac4
       sha_link: true
