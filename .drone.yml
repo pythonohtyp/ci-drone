@@ -18,12 +18,12 @@ pipeline:
      - go
   dingtalk:
     image: guoxudongdocker/drone-dingtalk
-      settings:
-        token:
-          from_secret: dingding
-        type: markdown
-        message_color: true
-        message_pic: true
-        sha_link: true
-      when:
-        status: [failure, success]
+    settings:
+      token:
+        from_secret: dingding
+      type: markdown
+      message_color: true
+      message_pic: true
+      sha_link: true
+    when:
+      status: [failure, success]
