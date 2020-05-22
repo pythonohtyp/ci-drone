@@ -17,9 +17,13 @@ pipeline:
     source:
      - go
   dingtalk:
-    image: xtony77/drone-dingtalk
-      secrets:
-        - source: DINGTALK_HOOK
-          target: dingding
-    when:
-      status: [failure, success]
+    image: guoxudongdocker/drone-dingtalk
+      settings:
+        token: 
+          from_secret: dingding
+        type: markdown
+        message_color: true
+        message_pic: true
+        sha_link: true
+      when:
+        status: [failure, success]
