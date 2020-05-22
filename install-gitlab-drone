@@ -1,0 +1,31 @@
+1.docker gitlab安装
+docker run -d     
+--hostname gitlab.example.com \
+-p 8081:80 \
+-p 8443:443 \
+-p 8822:22 \
+--name gitlab \
+--restart unless-stopped \
+-v gitlab-config:/etc/gitlab \
+-v gitlab-logs:/var/log/gitlab \
+-v gitlab-data:/var/opt/gitlab \
+twang2218/gitlab-ce-zh:11.1.4
+
+gitlab帐号密码：root/12345678
+
+2.docker-compose安装
+Pip install docker-compose
+3.drone安装
+vim docker-compose.yml
+
+遇到的问题
+1.gitlab系统 OAuth 应用设置
+
+2.Gitlab 10.6 版本以后为了安全，不允许向本地网络发送Webhook请求，如果想向本地网络发送Webhook请求，则需要使用管理员帐号登录.即可进入Admin Area，在Admin Area中，在Settings标签下面，找到OutBound Request，勾选上Allow Requests To The Local Network From Hooks And Services ，保存更改即可解决问题。解决下面报错。
+
+
+
+
+
+
+
