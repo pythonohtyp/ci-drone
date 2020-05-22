@@ -25,3 +25,6 @@ pipeline:
     image: guoxudongdocker/drone-dingtalk
     token: d93f58ca06051be5c0b6a6211ebd1d8ef10fa6fa5e03b46beba102ae0cee9ac4
     type: markdown
+    message_color: true
+    message_pic: true
+    sha_link: true
