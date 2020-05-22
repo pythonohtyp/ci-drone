@@ -10,6 +10,7 @@ pipeline:
     image: appleboy/drone-scp
     host: 192.168.110.12
     username: root
+    password: DtDream01
     rm: true
     target:
      - /tmp/drone
