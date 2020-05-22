@@ -17,10 +17,11 @@ pipeline:
     source:
      - go
   dingtalk:
-    image: guoxudongdocker/drone-dingtalk
+    image: lddsb/drone-dingtalk-message
     settings:
       token:
         from_secret: dingding
+      sha_link: true
       type: markdown
     when:
       status: [failure, success]
