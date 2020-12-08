@@ -35,7 +35,7 @@ pipeline:
     message_color: true
     message_pic: true
     sha_link: true
-  #notification_secret:网上教程，测试不可用
+  #notification_secret:网上教程，测试不可用X
   #  image: guoxudongdocker/drone-dingtalk
   #  settings:
   #    token:
