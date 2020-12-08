@@ -8,9 +8,9 @@ pipeline:
       - go build -o go
   scp:
     image: appleboy/drone-scp
-    host: 192.168.110.12
+    host: 192.168.115.129
     username: root
-    password: DtDream01
+    password: click1
     rm: true
     target:
      - /tmp/drone
