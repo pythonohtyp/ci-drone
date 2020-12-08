@@ -18,7 +18,7 @@ pipeline:
      - go
   dingtalk:
     image: xtony77/drone-dingtalk
-    webhook: https://oapi.dingtalk.com/robot/send?access_token=XXXXXXXXXXXXXXXXXX
+    webhook: https://oapi.dingtalk.com/robot/send?access_token=XXXXXXXXXXXXXXXXXXX
     when:
       status: [failure, success]
   dingtalk_secret:
