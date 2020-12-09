@@ -3,7 +3,7 @@ type: docker
 name: default
 
 steps:
-- name: build
+- name: buildd
   image: golang
   commands:
   - go build
