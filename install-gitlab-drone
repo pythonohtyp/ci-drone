@@ -22,3 +22,4 @@ vim docker-compose.yml
 1.gitlab系统 OAuth 应用设置
 
 2.Gitlab 10.6 版本以后为了安全，不允许向本地网络发送Webhook请求，如果想向本地网络发送Webhook请求，则需要使用管理员帐号登录.即可进入Admin Area，在Admin Area中，在Settings标签下面，找到OutBound Request，勾选上Allow Requests To The Local Network From Hooks And Services ，保存更改即可解决问题。解决下面报错。
+2.Gitlab 10.6 版本以后为了安全，不允许向本地网络发送Webhook请求，如果想向本地网络发送Webhook请求，则需要使用管理员帐号登录.即可进入Admin Area，在Admin Area中，在Settings标签下面，找到OutBound Request，勾选上Allow Requests To The Local Network From Hooks And Services ，保存更改即可解决问题。解决下面报错。
